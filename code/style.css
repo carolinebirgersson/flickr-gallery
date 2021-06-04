@@ -21,6 +21,29 @@ body {
 /* code {
 } */
 
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #9c41f2;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear; 
+}
+
+#loading.display {
+  visibility: visible;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -53,6 +76,11 @@ h1 {
 p {
   margin: 0;
   font-size: 16px;
+}
+
+#error {
+  font-size: 50px;
+  color: blue;
 }
 
 footer {
