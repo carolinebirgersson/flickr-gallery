@@ -1,12 +1,11 @@
+// Accordion
 function toggle () {
   this.classList.toggle("open")
 }
 
-document.getElementById("accordion").onclick = toggle
+document.getElementById("accordion-button").onclick = toggle
 
-const API_KEY = "449422936ab75f7bef9649f4cff24200";
-const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&format=json&nojsoncallback=1`
-
+// Loader
 const loader = document.querySelector("#loader");
 
 let displayLoader = () => {
@@ -19,6 +18,10 @@ let displayLoader = () => {
 let hideLoader = () => {
   loader.classList.remove("display");
 }
+
+// Flickr Gallery
+const API_KEY = "449422936ab75f7bef9649f4cff24200";
+const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&format=json&nojsoncallback=1`
 
 const showGallery = () => {
   displayLoader()
@@ -34,11 +37,11 @@ const showGallery = () => {
         const id = gallery.id;
         const serverId = gallery.server;
         const secret = gallery.secret;
-        container.innerHTML += `<a href="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg"><img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg" alt="images of Olafur Eliasson"/></a>`;
+        container.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg" alt="images of Olafur Eliasson"/>`;
       });
     })
     .catch((err) => {
-      document.getElementById("gallery").innerHTML = `<h1>Sorry</h1><p>We got nothing to show. Come back later!</p>`
+      document.getElementById("gallery").innerHTML = `<h2>Sorry</h2><p>No photos to show. Come back later!</p>`
       console.log("caught error", err);
     });
 

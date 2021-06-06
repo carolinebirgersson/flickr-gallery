@@ -20,14 +20,84 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/****** heading style ******/
+h1 {
+  margin: 0;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 28px;
+}
+
+h2 {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 18px;
+}
+
+h3 {
+  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/****** text style ******/
+p, li, ul {
+  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 16px;
+}
+
+li {
+  font-size: 12px;
+}
+
+/****** navigational elements ******/
+button {
+  margin: 15px 10px;
+  padding: 15px;
+  width: 95%;
+  border: none;
+  border-radius: 25px;
+  background:#ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #fdc002;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(9, 8, 8, 0.919);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #3b9e41;
+}
+
+/****** header ******/
 header {
+  position: sticky;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0;
+  text-align: center;
+  padding: 55px 0;
   background: #F7F6EC;
+  top: 0;
 }
 
+.header-nav:hover {
+  text-decoration: none;
+  color: rgba(9, 8, 8, 0.919);
+}
+
+/****** main content ******/
 section {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +112,20 @@ section {
   padding: 40px 0;
 }
 
+/****** accordion ******/
+ul {
+  padding: 15px;
+  border-radius: 25px;
+  background: #ccc;
+  display: none;
+  list-style: none;
+}
+
+.open + ul {
+  display: block;
+}
+
+/****** loader ******/
 #loader {
   position: fixed;
   margin: auto;
@@ -70,76 +154,18 @@ section {
   }
 }
 
+/****** images ******/
 img {
   padding: 5px 10px;
   max-width: 100%;
   height: auto;
 }
 
-h1 {
-  margin: 0;
-  font-family: 'Rubik Mono One', sans-serif;
-  font-size: 28px;
+img:hover {
+  background: #fdc002;
 }
 
-h2 {
-  font-family: 'Rubik Mono One', sans-serif;
-  font-size: 18px;
-}
-
-h3 {
-  margin: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-p, li, ul {
-  margin: 10px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-p {
-  font-size: 16px;
-}
-
-li {
-  font-size: 12px;
-}
-
-ul {
-  padding: 15px;
-  border-radius: 25px;
-  background: #ccc;
-  display: none;
-  list-style: none;
-}
-
-.open + ul {
-  display: block;
-}
-
-button {
-  margin: 15px 10px;
-  padding: 15px;
-  width: 95%;
-  border: none;
-  border-radius: 25px;
-  background:#ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: rgba(9, 8, 8, 0.919);
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
+/****** footer ******/
 footer {
   display: flex;
   justify-content: center;
@@ -150,9 +176,7 @@ footer {
 /* Ipad */
 @media (min-width: 415px) and (max-width: 1024px) {
 
-  header {
-    padding: 150px 0 10 0;
-  }
+  /****** heading style ******/
 
   h1 {
     font-size: 48px;
@@ -165,6 +189,8 @@ footer {
   h3 {
     font-size: 20px;
   }
+
+    /****** text style + button ******/
 
   p, button, ul {
     font-size: 18px;
@@ -180,15 +206,17 @@ footer {
     font-size: 16px;
   }
 
+  /****** header ******/
+
+  header {
+    padding: 80px 0;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
 
-  header {
-    padding: 100px 0;
-  }
-
+ /****** heading style ******/
   h1 {
     font-size: 63px;
   }
@@ -200,6 +228,9 @@ footer {
   h3 {
     font-size: 24px;
   }
+
+
+ /****** text style + button ******/
 
   p, button, ul {
     width: 35%;
@@ -214,6 +245,12 @@ footer {
     font-size: 14px;
   }
 
+  /****** header ******/
+  header {
+    padding: 50px 0;
+  }
+
+  /****** main content ******/
   .gallery-section {
     align-items: center;
   }

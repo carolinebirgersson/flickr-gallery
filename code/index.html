@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Flickr Gallery</title>
   </head>
   <body>
-
-    <header>
-      <h1 tabindex="0">#LeCorbusier</h1>
-      <h3 tabindex="0">Presented by Flickr</h3>
+    <header id="header">
+      <a class="header-nav" href="#" onclick="window.location.reload(true);">
+        <h1 tabindex="0">#LeCorbusier</h1>
+        <h3 tabindex="0">Presented by Flickr</h3>
+      </a>
     </header>
 
     <section class="about-section" id="about">
       <div id="loader"></div>
       <h2 tabindex="0">The architect</h2>
       <p tabindex="0">
-        Le Corbusier was a Swiss-French architect, designer, painter, urban planner, writer, 
-        and one of the pioneers of what is now regarded as modern architecture. 
+        Le Corbusier was a Swiss-French architect, designer, painter, urban
+        planner, writer, and one of the pioneers of what is now regarded as
+        modern architecture.
       </p>
-      <button id="accordion">Selected work +</button>
+
+      <button id="accordion-button">Selected work +</button>
       <ul class="open">
-        <li tabindex="0"><a href="https://www.nmwa.go.jp/en/">The National Museum of Western Art in Tokyo</a> (1954–1959).</li>
-        <li tabindex="0"><a href="https://carpenter.center/building/architecture">Carpenter Center</a>, for the Visual Arts in Cambridge, Massachusetts (1960–1963).</li>
-        <li tabindex="0"  ><a href="https://en.wikipedia.org/wiki/Pavillon_Le_Corbusier">Pavillon Le Corbusier in Zürich</a> (1962–1967).</li>
+        <li tabindex="0">
+          <a href="https://www.nmwa.go.jp/en/">The National Museum of Western Art in Tokyo</a>
+          (1954–1959).
+        </li>
+        <li tabindex="0">
+          <a href="https://carpenter.center/building/architecture">Carpenter Center</a>
+          , for the Visual Arts in Cambridge, Massachusetts (1960–1963).
+        </li>
+        <li tabindex="0">
+          <a href="https://en.wikipedia.org/wiki/Pavillon_Le_Corbusier">
+            Pavillon Le Corbusier in Zürich</a>(1962–1967).
+        </li>
       </ul>
     </section>
 
-    <section class="gallery-section" id="gallery">    
-    </section>
+    <section id="gallery"></section>
 
     <footer>
       <p>© Caroline Birgersson</p>
