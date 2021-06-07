@@ -1,7 +1,7 @@
 // Accordion
-const accordionButton = document.getElementById("accordion-button")
-const plusContainer = document.getElementById("plus")
-plusContainer.innerHTML += `<p>+</p>`;
+const accordionButton = document.getElementById("accordion-container")
+const plusContainer = document.getElementById("expand-symbol")
+plusContainer.innerHTML += `+`; //shows a "+" depending on when the the element can expand
 
 accordionButton.onclick = () => {
   const infoContainer = accordionButton.nextElementSibling
@@ -26,7 +26,7 @@ let hideLoader = () => {
 // Flickr Gallery
 const API_KEY = "449422936ab75f7bef9649f4cff24200";
 const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&format=json&nojsoncallback=1`
-const errorMessage = "No photos to show. Come back later!";
+const errorMessage = "Sorry, no photos to show. Come back later!";
 
 const showGallery = () => {
   displayLoader()
@@ -54,7 +54,6 @@ const showGallery = () => {
   }
 
   showGallery();
-
 
 // Scroll to top nav
 scrollButton = document.getElementById("topScrollButton");

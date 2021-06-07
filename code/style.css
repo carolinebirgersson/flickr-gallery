@@ -13,56 +13,57 @@ body {
   clear: both;
   background: #F7F6EC;
   color: rgba(9, 8, 8, 0.919);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif,'Rubik Mono One', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", "Rubik Mono One", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/****** heading style ******/
+/****** heading styles ******/
 h1 {
   margin: 0;
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: "Rubik Mono One", sans-serif;
   font-size: 28px;
 }
 
 h2 {
-  font-family: 'Rubik Mono One', sans-serif;
+  margin-bottom: 0;
+  font-family: "Rubik Mono One", sans-serif;
   font-size: 18px;
 }
 
 h3 {
   margin: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
 
-/****** text style ******/
+/****** text styles ******/
 p, li, ul {
-  margin: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
+  margin: 20px 10px;
   font-size: 16px;
 }
 
 li {
-  margin: 10px 0;
-  font-size: 12px;
+  margin: 15px 0;
+  font-size: 14px;
 }
 
-/****** navigational elements ******/
+/****** navigation styles ******/
+
 button {
-  margin: 15px 10px 0 10px;
-  padding: 15px;
-  width: 95%;
+  margin: 0;
+  padding: 10px 0;
+  width: 40%;
   border: none;
-  background:#ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  outline: none;
+  background: #F7F6EC;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -70,26 +71,19 @@ button:hover {
   background: #fdc002;
 }
 
-#topScrollButton {
-  display: none;
-  position: fixed;
-  justify-content: center;
-  bottom: 20px;
-  z-index: 99; 
-  border: none;
-  outline: none;
-  width: 60%;
-  background: #F7F6EC;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px; 
-  color: rgba(9, 8, 8, 0.919);
-  font-family: 'Rubik Mono One', sans-serif;
-  font-size: 16px;
+/* In the accordion button */
+span {
+  font-size: 20px;
 }
 
-#topScrollButton:hover {
-  background: #555;
+.topscroll-button {
+  display: none;
+  position: fixed;
+  border-radius: 10px; 
+  bottom: 15px;
+  right: 15px;
+  z-index: 99; 
+  font-size: 14px;
 }
 
 a {
@@ -99,59 +93,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #3b9e41;
-}
-
-/****** header ******/
-header {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 55px 0;
-  background: #F7F6EC;
-  top: 0;
-}
-
-.header-nav:hover {
-  text-decoration: none;
-  color: rgba(9, 8, 8, 0.919);
-}
-
-/****** main content ******/
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px 0;
-  background: #E0E0D7;
-}
-
-.about-section {
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 0;
-}
-
-/****** accordion ******/
-ul {
-  margin: 0 10px;
-  padding: 15px;
-  background: #fdc002;
-  list-style: none;
-}
-
-.info-container {
-  display: none;
-}
-
-.remove {
-  display: none;
-}
-
-.active {
-  display: block;
 }
 
 /****** loader ******/
@@ -183,15 +124,80 @@ ul {
   }
 }
 
-/****** images ******/
+/****** header ******/
+header {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  text-align: center;
+  top: 0;
+  padding: 60px 0;
+  background: #F7F6EC;
+}
+
+.header-nav:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/****** main content ******/
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: #E0E0D7;
+}
+
+.info-section {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
 img {
   padding: 5px 10px;
   width: 100%;
   height: auto;
 }
 
-img:hover {
+/****** accordion ******/
+.accordion-container {
+  width: 100%;
+  margin: 0;
+}
+
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px 0px 0px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  background:#ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.expand-info {
+  display: none;
+}
+
+ul {
+  margin: 0;
+  padding: 15px;
+  width: 100%;
   background: #fdc002;
+  list-style: none;
+}
+
+.remove {
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 /****** footer ******/
@@ -206,8 +212,7 @@ footer {
 /* Ipad */
 @media (min-width: 415px) and (max-width: 1024px) {
 
-  /****** heading style ******/
-
+  /****** heading styles ******/
   h1 {
     font-size: 48px;
   }
@@ -220,33 +225,46 @@ footer {
     font-size: 20px;
   }
 
-    /****** text style + button ******/
-
-  p, button, ul {
-    font-size: 18px;
-    line-height: 30px;
-    width: 60%;
-  }
-
+  /****** text styles + button ******/
   p {
     margin: 20px 0;
+  }
+  
+  p, button {
+    width: 60%;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   li {
     font-size: 16px;
   }
 
-  /****** header ******/
+  .topscroll-button {
+    width: 25%;
+    font-size: 16px;
+  }
 
+  /****** header ******/
   header {
     padding: 80px 0;
+  }
+
+  /****** main content ******/
+  .accordion-container, .expand-info {
+    width: 60%;
+  }
+
+  img {
+    padding: 10px;
+    width: 25%;
   }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
 
- /****** heading style ******/
+ /****** heading styles ******/
   h1 {
     font-size: 63px;
   }
@@ -259,20 +277,16 @@ footer {
     font-size: 24px;
   }
 
-
- /****** text style + button ******/
-
-  p, button, ul {
+ /****** text styles + button ******/
+  p {
+    margin: 20px 0;
     width: 35%;
     line-height: 30px;
   }
 
-  p {
-    margin: 20px 0;
-  }
-
-  li {
-    font-size: 14px;
+  .topscroll-button {
+    width: 12%;
+    font-size: 16px;
   }
 
   /****** header ******/
@@ -281,12 +295,13 @@ footer {
   }
 
   /****** main content ******/
-  .gallery-section {
-    align-items: center;
-  }
-
   img {
     padding: 10px;
+    width: 25%;
   }
-  
+
+    /****** accordion ******/
+  .accordion-container, .expand-info {
+    width: 35%;
+  }
 }
