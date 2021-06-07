@@ -55,22 +55,23 @@ const showGallery = () => {
 
   showGallery();
 
-  //Get the button:
-mybutton = document.getElementById("myBtn");
+
+// Scroll to top nav
+scrollButton = document.getElementById("topScrollButton");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {showButton()};
 
-const scrollFunction = () => {
+const showButton = () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+    scrollButton.style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    scrollButton.style.display = "none";
   }
 }
 
 // When the user clicks on the button, scroll to the top of the document
-const topFunction = () => {
+const topScrollFunction = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, Edge
 }
