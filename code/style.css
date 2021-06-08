@@ -18,7 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/****** Main style ******/
+/****** MAIN STYLE ******/
+
 section {
   padding: 20px 0;
   background: #E0E0D7;
@@ -27,7 +28,7 @@ section {
 h1 {
   margin: 0;
   font-family: "Rubik Mono One", sans-serif;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 h2 {
@@ -58,9 +59,10 @@ button {
   width: 40%;
   border: none;
   outline: none;
+  border-radius: 10px; 
   background: #F7F6EC;
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -77,7 +79,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/****** Page content ******/
+/****** PAGE CONTENT ******/
+
+/****** header ******/
 header {
   display: flex;
   flex-direction: column;
@@ -93,6 +97,7 @@ header {
   cursor: pointer;
 }
 
+/****** info section ******/
 .info-section {
   display: flex;
   flex-direction: column;
@@ -100,8 +105,7 @@ header {
   justify-content: center;
 }
 
-/****** accordion ******/
-.accordion-container {
+.accordion-container { /****** accordion ******/
   width: 100%;
   margin: 0;
 }
@@ -113,8 +117,10 @@ header {
   padding: 15px;
   width: 100%;
   border: none;
+  border-radius: 0;
   background:#ccc;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -147,16 +153,30 @@ li {
   font-size: 14px;
 }
 
+/* gallery section */
 .gallery-section {
+  padding: 15px 0;
+}
+
+.gallery-grid {
+  background: #E0E0D7;
+  padding: 0px;
+}
+
+.image-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  width: 100%;
+  background: #E0E0D7;
 }
 
 img {
-  padding: 5px 10px;
-  max-width: 100%;
-  height: auto;
+  padding: 5px;
+  height: auto; 
+  max-width: 150px;
+  flex-grow: 1;
+  object-fit: cover;
 }
 
 /****** footer ******/
@@ -168,15 +188,13 @@ footer {
   background: #CFCEC1;
 }
 
-/****** Sticky scroll button ******/
+/****** sticky scroll button ******/
 .topscroll-button {
   display: none;
   position: fixed;
-  border-radius: 10px; 
   bottom: 15px;
   right: 15px;
   z-index: 99; 
-  font-size: 14px;
 }
 
 /****** loader ******/
@@ -207,6 +225,8 @@ footer {
     transform: rotate(360deg)
   }
 }
+
+/****** IPAD / DESKTOP ******/
 
 /* Ipad */
 @media (min-width: 415px) and (max-width: 1024px) {
@@ -245,9 +265,16 @@ footer {
     font-size: 16px;
   }
 
-  img {
+  .gallery-section {
     padding: 10px;
-    width: 25%;
+  }
+  
+  img {
+    padding: 2px;
+    height: 150px;
+    max-width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
   }
 
   .topscroll-button {
@@ -285,9 +312,14 @@ footer {
     width: 35%;
   }
 
+  .gallery-section {
+    padding: 40px;
+  }
+  
   img {
-    padding: 10px;
-    width: 25%;
+    padding: 5px;
+    height: 180px;
+    max-width: none;
   }
 
   .topscroll-button {
