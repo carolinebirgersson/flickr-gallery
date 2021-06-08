@@ -43,7 +43,7 @@ const showGallery = () => {
         const id = gallery.id;
         const serverId = gallery.server;
         const secret = gallery.secret;
-        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg" alt="images of Le Corbusier" tabindex="0"/>`;
+        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg" alt="images of Le Corbusier"/>`;
       });
     })
     .catch((err) => {
@@ -57,8 +57,6 @@ const showGallery = () => {
 // Scroll to top nav
 scrollButton = document.getElementById("topScrollButton");
 
-// When the user scrolls down 20px from the top of the document, show the button
-
 const showButton = () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     scrollButton.style.display = "block";
@@ -71,7 +69,6 @@ window.onscroll = () => {
   showButton()
 };
 
-// When the user clicks on the button, scroll to the top of the document
 const topScrollFunction = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, Edge

@@ -79,7 +79,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/****** PAGE CONTENT ******/
+/****** CONTENT ******/
 
 /****** header ******/
 header {
@@ -105,7 +105,7 @@ header {
   justify-content: center;
 }
 
-.accordion-container { /****** accordion ******/
+.accordion-container {
   width: 100%;
   margin: 0;
 }
@@ -273,8 +273,6 @@ footer {
     padding: 2px;
     height: 150px;
     max-width: 100%;
-    flex-grow: 1;
-    object-fit: cover;
   }
 
   .topscroll-button {
