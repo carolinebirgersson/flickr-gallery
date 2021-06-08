@@ -12,13 +12,18 @@ body {
   margin: 0;
   clear: both;
   background: #F7F6EC;
-  color: rgba(9, 8, 8, 0.919);
+  color: #090808;
   font-family: -apple-system, BlinkMacSystemFont, "Montserrat", "Rubik Mono One", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/****** heading styles ******/
+/****** Main style ******/
+section {
+  padding: 20px 0;
+  background: #E0E0D7;
+}
+
 h1 {
   margin: 0;
   font-family: "Rubik Mono One", sans-serif;
@@ -38,7 +43,6 @@ h3 {
   font-weight: 400;
 }
 
-/****** text styles ******/
 p, li, ul {
   font-family: "Montserrat", sans-serif;
 }
@@ -47,13 +51,6 @@ p {
   margin: 20px 10px;
   font-size: 16px;
 }
-
-li {
-  margin: 15px 0;
-  font-size: 14px;
-}
-
-/****** navigation styles ******/
 
 button {
   margin: 0;
@@ -71,60 +68,16 @@ button:hover {
   background: #fdc002;
 }
 
-/* In the accordion button */
-span {
-  font-size: 20px;
-}
-
-.topscroll-button {
-  display: none;
-  position: fixed;
-  border-radius: 10px; 
-  bottom: 15px;
-  right: 15px;
-  z-index: 99; 
-  font-size: 14px;
-}
-
 a {
   text-decoration: none;
-  color: rgba(9, 8, 8, 0.919);
+  color: #090808;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/****** loader ******/
-#loader {
-  position: fixed;
-  margin: auto;
-  width: 15rem;
-  height: 15rem;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-  border: 5px solid rgba(9, 8, 8, 0.919);
-  border-top: 6px solid #F7F6EC;
-  border-radius: 100%;
-  visibility: hidden;
-  animation: spin 1s infinite linear; 
-}
-
-#loader.display {
-  visibility: visible;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg)
-  }
-}
-
-/****** header ******/
+/****** Page content ******/
 header {
   display: flex;
   flex-direction: column;
@@ -140,26 +93,11 @@ header {
   cursor: pointer;
 }
 
-/****** main content ******/
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px 0;
-  background: #E0E0D7;
-}
-
 .info-section {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 40px 0;
-}
-
-img {
-  padding: 5px 10px;
-  width: 100%;
-  height: auto;
+  justify-content: center;
 }
 
 /****** accordion ******/
@@ -180,8 +118,20 @@ img {
   font-weight: 600;
 }
 
+span { /* In the accordion button */
+  font-size: 20px;
+}
+
 .expand-info {
   display: none;
+}
+
+.remove {
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 ul {
@@ -192,12 +142,21 @@ ul {
   list-style: none;
 }
 
-.remove {
-  display: none;
+li {
+  margin: 15px 0;
+  font-size: 14px;
 }
 
-.active {
-  display: block;
+.gallery-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img {
+  padding: 5px 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 /****** footer ******/
@@ -209,10 +168,49 @@ footer {
   background: #CFCEC1;
 }
 
+/****** Sticky scroll button ******/
+.topscroll-button {
+  display: none;
+  position: fixed;
+  border-radius: 10px; 
+  bottom: 15px;
+  right: 15px;
+  z-index: 99; 
+  font-size: 14px;
+}
+
+/****** loader ******/
+#loader {
+  position: fixed;
+  margin: auto;
+  width: 15rem;
+  height: 15rem;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  border: 5px solid #090808;
+  border-top: 6px solid #F7F6EC;
+  border-radius: 100%;
+  visibility: hidden;
+  animation: spin 1s infinite linear; 
+}
+
+#loader.display {
+  visibility: visible;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 /* Ipad */
 @media (min-width: 415px) and (max-width: 1024px) {
 
-  /****** heading styles ******/
   h1 {
     font-size: 48px;
   }
@@ -225,7 +223,6 @@ footer {
     font-size: 20px;
   }
 
-  /****** text styles + button ******/
   p {
     margin: 20px 0;
   }
@@ -236,35 +233,32 @@ footer {
     line-height: 30px;
   }
 
-  li {
-    font-size: 16px;
-  }
-
-  .topscroll-button {
-    width: 25%;
-    font-size: 16px;
-  }
-
-  /****** header ******/
   header {
     padding: 80px 0;
   }
 
-  /****** main content ******/
   .accordion-container, .expand-info {
     width: 60%;
+  }
+
+  li {
+    font-size: 16px;
   }
 
   img {
     padding: 10px;
     width: 25%;
   }
+
+  .topscroll-button {
+    width: 25%;
+    font-size: 16px;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
 
- /****** heading styles ******/
   h1 {
     font-size: 63px;
   }
@@ -277,31 +271,27 @@ footer {
     font-size: 24px;
   }
 
- /****** text styles + button ******/
   p {
     margin: 20px 0;
     width: 35%;
     line-height: 30px;
   }
 
-  .topscroll-button {
-    width: 12%;
-    font-size: 16px;
-  }
-
-  /****** header ******/
   header {
     padding: 50px 0;
   }
 
-  /****** main content ******/
+  .accordion-container, .expand-info {
+    width: 35%;
+  }
+
   img {
     padding: 10px;
     width: 25%;
   }
 
-    /****** accordion ******/
-  .accordion-container, .expand-info {
-    width: 35%;
+  .topscroll-button {
+    width: 12%;
+    font-size: 16px;
   }
 }
