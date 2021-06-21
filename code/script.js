@@ -16,7 +16,7 @@ let displayLoader = () => {
   loader.classList.add("display");
   setTimeout(() => {
     loader.classList.remove("display");
-  }, 5000);
+  }, 3000);
 }
 
 let hideLoader = () => {
@@ -25,7 +25,9 @@ let hideLoader = () => {
 
 // Flickr Gallery
 const API_KEY = "449422936ab75f7bef9649f4cff24200";
-const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&format=json&nojsoncallback=1`
+const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&per_page=30&format=json&nojsoncallback=1`
+
+
 const galleryContainer = document.getElementById("gallery");
 const errorMessage = "Sorry, no photos to show. Come back later!";
 
@@ -43,7 +45,7 @@ const showGallery = () => {
         const id = gallery.id;
         const serverId = gallery.server;
         const secret = gallery.secret;
-        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_w.jpg" alt="images of Le Corbusier"/>`;
+        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_b.jpg" alt="images of Le Corbusier"/>`;
       });
     })
     .catch((err) => {
