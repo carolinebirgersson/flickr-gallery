@@ -12,21 +12,20 @@ accordionButton.onclick = () => {
 // Loader
 const loader = document.querySelector("#loader");
 
-let displayLoader = () => {
+const displayLoader = () => {
   loader.classList.add("display");
   setTimeout(() => {
     loader.classList.remove("display");
-  }, 3000);
+  }, 3000); //använd finally istället för att sätta sekunder
 }
 
-let hideLoader = () => {
+const hideLoader = () => {
   loader.classList.remove("display");
 }
 
 // Flickr Gallery
 const API_KEY = "449422936ab75f7bef9649f4cff24200";
 const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=lecorbusier&per_page=30&format=json&nojsoncallback=1`
-
 
 const galleryContainer = document.getElementById("gallery");
 const errorMessage = "Sorry, no photos to show. Come back later!";
@@ -40,7 +39,7 @@ const showGallery = () => {
       return response.json();
     })
     .then((data) => {
-      hideLoader()
+      
       data.photos.photo.map((gallery) => {
         const id = gallery.id;
         const serverId = gallery.server;
@@ -49,7 +48,7 @@ const showGallery = () => {
       });
     })
     .catch((err) => {
-      document.getElementById("gallery").innerHTML = `${errorMessage}`
+      document.getElementById("gallery").innerHTML = errorMessage //använd inte ${} här, den används bara i en längre string. Ta bort och skriv bara error message eller lägg till h1 tag runt om.
       console.log("caught error", err);
     });
   }
