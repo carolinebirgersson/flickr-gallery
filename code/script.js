@@ -14,9 +14,6 @@ const loader = document.querySelector("#loader");
 
 const displayLoader = () => {
   loader.classList.add("display");
-  setTimeout(() => {
-    loader.classList.remove("display");
-  }, 3000); //använd finally istället för att sätta sekunder
 }
 
 const hideLoader = () => {
@@ -39,7 +36,6 @@ const showGallery = () => {
       return response.json();
     })
     .then((data) => {
-      
       data.photos.photo.map((gallery) => {
         const id = gallery.id;
         const serverId = gallery.server;
@@ -50,7 +46,10 @@ const showGallery = () => {
     .catch((err) => {
       document.getElementById("gallery").innerHTML = errorMessage //använd inte ${} här, den används bara i en längre string. Ta bort och skriv bara error message eller lägg till h1 tag runt om.
       console.log("caught error", err);
-    });
+    })
+    .finally(() => {
+      hideLoader();
+    })
   }
 
   showGallery();
