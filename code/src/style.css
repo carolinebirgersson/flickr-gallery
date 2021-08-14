@@ -11,9 +11,10 @@ html {
 body {
   margin: 0;
   clear: both;
-  background: #F7F6EC;
+  background: #f7f6ec;
   color: #090808;
-  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", "Rubik Mono One", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", "Rubik Mono One",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,7 +23,7 @@ body {
 
 section {
   padding: 20px 0;
-  background: #E0E0D7;
+  background: #e0e0d7;
 }
 
 h1 {
@@ -44,7 +45,9 @@ h3 {
   font-weight: 400;
 }
 
-p, li, ul {
+p,
+li,
+ul {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -59,9 +62,9 @@ button {
   width: 45%;
   border: none;
   outline: none;
-  border-radius: 10px; 
-  background: #F7F6EC;
-  font-family: 'Rubik Mono One', sans-serif;
+  border-radius: 10px;
+  background: #f7f6ec;
+  font-family: "Rubik Mono One", sans-serif;
   font-size: 14px;
   cursor: pointer;
 }
@@ -89,7 +92,7 @@ header {
   text-align: center;
   top: 0;
   padding: 60px 0;
-  background: #F7F6EC;
+  background: #f7f6ec;
 }
 
 .header-nav:hover {
@@ -118,13 +121,14 @@ header {
   width: 100%;
   border: none;
   border-radius: 0;
-  background:#ccc;
-  font-family: 'Montserrat', sans-serif;
+  background: #ccc;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
 
-span { /* In the accordion button */
+span {
+  /* In the accordion button */
   font-size: 20px;
 }
 
@@ -159,7 +163,7 @@ li {
 }
 
 .gallery-grid {
-  background: #E0E0D7;
+  background: #e0e0d7;
   padding: 0px;
 }
 
@@ -168,12 +172,12 @@ li {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  background: #E0E0D7;
+  background: #e0e0d7;
 }
 
 img {
   padding: 5px;
-  height: auto; 
+  height: auto;
   max-width: 150px;
   flex-grow: 1;
   object-fit: cover;
@@ -185,7 +189,7 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 60px 0;
-  background: #CFCEC1;
+  background: #cfcec1;
 }
 
 /****** sticky scroll button ******/
@@ -194,7 +198,7 @@ footer {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  z-index: 99; 
+  z-index: 99;
 }
 
 /****** loader ******/
@@ -207,10 +211,10 @@ footer {
   right: 0;
   z-index: 99999;
   border: 5px solid #090808;
-  border-top: 6px solid #F7F6EC;
+  border-top: 6px solid #f7f6ec;
   border-radius: 100%;
   visibility: hidden;
-  animation: spin 1s infinite linear; 
+  animation: spin 1s infinite linear;
 }
 
 #loader.display {
@@ -222,7 +226,7 @@ footer {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
@@ -230,7 +234,6 @@ footer {
 
 /* Ipad */
 @media (min-width: 415px) and (max-width: 1024px) {
-
   h1 {
     font-size: 48px;
   }
@@ -246,8 +249,9 @@ footer {
   p {
     margin: 20px 0;
   }
-  
-  p, button {
+
+  p,
+  button {
     width: 60%;
     font-size: 18px;
     line-height: 30px;
@@ -257,7 +261,8 @@ footer {
     padding: 80px 0;
   }
 
-  .accordion-container, .expand-info {
+  .accordion-container,
+  .expand-info {
     width: 60%;
   }
 
@@ -268,7 +273,7 @@ footer {
   .gallery-section {
     padding: 10px;
   }
-  
+
   img {
     height: 150px;
     max-width: 100%;
@@ -282,7 +287,6 @@ footer {
 
 /* Desktop */
 @media (min-width: 1024px) {
-
   h1 {
     font-size: 63px;
   }
@@ -305,14 +309,15 @@ footer {
     padding: 50px 0;
   }
 
-  .accordion-container, .expand-info {
+  .accordion-container,
+  .expand-info {
     width: 35%;
   }
 
   .gallery-section {
     padding: 40px;
   }
-  
+
   img {
     padding: 5px;
     height: 200px;
