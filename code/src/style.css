@@ -163,15 +163,11 @@ li {
 }
 
 .gallery-grid {
-  background: #e0e0d7;
-  padding: 0px;
-}
-
-.image-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  padding: 0px;
   background: #e0e0d7;
 }
 
