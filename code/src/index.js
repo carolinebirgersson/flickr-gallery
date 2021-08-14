@@ -2,7 +2,6 @@
 const accordionButton = document.getElementById('accordion-container');
 const plusContainer = document.getElementById('expand-symbol');
 plusContainer.innerHTML += '+';
-
 accordionButton.onclick = () => {
   const infoContainer = accordionButton.nextElementSibling;
   infoContainer.classList.toggle('active');
@@ -34,11 +33,12 @@ const showGallery = () => {
       return response.json();
     })
     .then((data) => {
+      // eslint-disable-next-line array-callback-return
       data.photos.photo.map((gallery) => {
-        const id = gallery.id;
-        const serverId = gallery.server;
-        const secret = gallery.secret;
-        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${serverId}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
+        const { id } = gallery;
+        const { server } = gallery;
+        const { secret } = gallery;
+        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
       });
     })
     .catch((error) => {
