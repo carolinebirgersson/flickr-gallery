@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="../src/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik+Mono+One&display=swap"
@@ -21,7 +21,6 @@
     </header>
 
     <section class="info-section">
-      <div id="loader"></div>
       <h2>The architect</h2>
       <p>
         Le Corbusier was a Swiss-French architect, designer, painter, urban
@@ -58,24 +57,19 @@
     </section>
 
     <section class="gallery-section">
+      <div id="loader"></div>
       <ul class="gallery-grid" id="gallery">
-        <li class="image-container" id="image"></li>
+        <li id="image"></li>
       </ul>
     </section>
 
     <!-- Scroll to top button -->
-    <button
-      onclick="topScrollFunction()"
-      class="topscroll-button"
-      id="topScrollButton"
-    >
-      Back to top
-    </button>
+    <button class="topscroll-button" id="topScrollButton">Back to top</button>
 
     <footer>
       <p>© Caroline Birgersson</p>
     </footer>
 
-    <script src="../src/index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
