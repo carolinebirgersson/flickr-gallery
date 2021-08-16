@@ -10,6 +10,9 @@ Further improvements I would like to do:
 I would like to go for another round on the gallery images and optimize the grid. I would like to implement a hover effect on the images, so when the user hovers the image fades and display the image title. I would like to store the data from the API by using Redux.
 
 The site in different devices:
-Iphon<img width="310" alt="Iphone x" src="https://user-images.githubusercontent.com/62345967/129539160-f71be6e1-311a-4ca7-8c4f-bb2c0b7a36b4.png">
+Iphone X
+<img width="310" alt="Iphone x" src="https://user-images.githubusercontent.com/62345967/129539160-f71be6e1-311a-4ca7-8c4f-bb2c0b7a36b4.png">
+Ipad
 <img width="380" alt="Ipad" src="https://user-images.githubusercontent.com/62345967/129539165-b84f505f-ad4b-4098-b2ef-884496d7a6fa.png">
+Desktop
 <img width="1440" alt="Desktop" src="https://user-images.githubusercontent.com/62345967/129539167-5ffc7369-0e21-4005-b3de-f469992177d0.png">
