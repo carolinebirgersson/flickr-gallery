@@ -26,30 +26,52 @@ const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.sear
 const galleryContainer = document.getElementById("gallery");
 const errorMessage = "Sorry, no photos to show. Come back later!";
 
-const showGallery = () => {
+async function loadGallery() {
   displayLoader();
-  fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      // eslint-disable-next-line array-callback-return
-      data.photos.photo.map((gallery) => {
-        const { id } = gallery;
-        const { server } = gallery;
-        const { secret } = gallery;
-        galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
-      });
-    })
-    .catch((error) => {
-      document.getElementById("gallery").innerHTML = errorMessage;
-      // eslint-disable-next-line no-console
-      console.warn("caught error", error);
-    })
-    .finally(() => {
-      hideLoader();
-    });
-};
+  const response = await fetch(API_URL);
+  const data = await response.json();
 
-showGallery();
+  return data;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  let data = [];
+
+  try {
+    data = await loadGallery();
+    galleryContainer.innerHTML += `<img src=""/>`;
+  } catch (error) {
+    document.getElementById("gallery").innerHTML = errorMessage;
+    console.log("Caught error", error);
+  } finally {
+    hideLoader();
+  }
+  console.log(data);
+});
+
+// const showGallery = () => {
+//   displayLoader();
+//   fetch(API_URL)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // eslint-disable-next-line array-callback-return
+//       data.photos.photo.map((gallery) => {
+//         const { id } = gallery;
+//         const { server } = gallery;
+//         const { secret } = gallery;
+//         galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
+//       });
+//     })
+//     .catch((error) => {
+//       document.getElementById("gallery").innerHTML = errorMessage;
+//       console.warn("caught error", error);
+//     })
+//     .finally(() => {
+//       hideLoader();
+//     });
+// };
+
+// showGallery();
 
 // Scroll to top nav
 const scrollButton = document.getElementById("topScrollButton");

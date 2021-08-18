@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
-    "build": "http-server",
     "format": "prettier -w ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.27.5",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -19,5 +21,13 @@
     "eslint-plugin-prettier": "^3.4.0",
     "http-server": "^13.0.0",
     "prettier": "^2.3.2"
+  },
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "dependencies": {
+    "browser-sync": "^2.27.5"
   }
 }
