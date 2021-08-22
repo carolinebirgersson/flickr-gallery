@@ -132,7 +132,7 @@ header {
   font-weight: 600;
 }
 .accordion-button:focus {
-  outline: 1px solid #fdc002;
+  outline: 1px solid #ccc;
 }
 
 span {
