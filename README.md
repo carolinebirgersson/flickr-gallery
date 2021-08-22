@@ -20,5 +20,7 @@ Ipad
 Desktop
 ![Desktop](https://user-images.githubusercontent.com/62345967/129609633-fe4fcb89-e076-43a1-bffa-6402b8228c33.png)
 
+View it live:
+https://lecorbusiergallery.netlify.app/
 
 
