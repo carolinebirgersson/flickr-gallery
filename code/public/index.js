@@ -6,6 +6,9 @@ accordionButton.onclick = () => {
   const infoContainer = accordionButton.nextElementSibling;
   infoContainer.classList.toggle("active");
   plusContainer.classList.toggle("remove");
+
+  const isActive = infoContainer.classList.contains("active");
+  infoContainer.setAttribute("aria-expanded", isActive);
 };
 
 // Loader
@@ -35,43 +38,36 @@ async function loadGallery() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let data = [];
+  let data;
 
   try {
     data = await loadGallery();
-    galleryContainer.innerHTML += `<img src=""/>`;
   } catch (error) {
     document.getElementById("gallery").innerHTML = errorMessage;
     console.log("Caught error", error);
   } finally {
     hideLoader();
   }
+
+  if (data) {
+    // eslint-disable-next-line array-callback-return
+    data.photos.photo.map((gallery) => {
+      const { id } = gallery;
+      const { server } = gallery;
+      const { secret } = gallery;
+
+      // 1. Gör fetch på bild-url
+
+      // 2. Om gick bra, Konvertera bild till base64-sträng
+
+      // 3. Om gick dåligt, rendera ingen img-tagg och consolelogga fel
+
+      galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
+    });
+  }
+
   console.log(data);
 });
-
-// const showGallery = () => {
-//   displayLoader();
-//   fetch(API_URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // eslint-disable-next-line array-callback-return
-//       data.photos.photo.map((gallery) => {
-//         const { id } = gallery;
-//         const { server } = gallery;
-//         const { secret } = gallery;
-//         galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
-//       });
-//     })
-//     .catch((error) => {
-//       document.getElementById("gallery").innerHTML = errorMessage;
-//       console.warn("caught error", error);
-//     })
-//     .finally(() => {
-//       hideLoader();
-//     });
-// };
-
-// showGallery();
 
 // Scroll to top nav
 const scrollButton = document.getElementById("topScrollButton");

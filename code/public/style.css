@@ -131,6 +131,9 @@ header {
   font-size: 16px;
   font-weight: 600;
 }
+.accordion-button:focus {
+  outline: 1px solid #fdc002;
+}
 
 span {
   /* In the accordion button */
@@ -206,21 +209,29 @@ footer {
 /****** loader ******/
 #loader {
   position: fixed;
-  margin: auto;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: none rgba(0,0,0,0.7);
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#loader > div {
   width: 15rem;
   height: 15rem;
-  left: 0;
-  right: 0;
   border: 5px solid #090808;
   border-top: 6px solid #f7f6ec;
   border-radius: 100%;
-  visibility: hidden;
   z-index: 9999;
   animation: spin 1s infinite linear;
 }
 
 #loader.display {
-  visibility: visible;
+  display: flex;
 }
 
 @keyframes spin {

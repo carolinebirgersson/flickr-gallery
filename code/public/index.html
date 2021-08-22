@@ -28,12 +28,12 @@
         modern architecture.
       </p>
       <div class="accordion-container" id="accordion-container">
-        <button class="accordion-button">
+        <button type="button" class="accordion-button" aria-controls="expand-info">
           Selected work
           <span id="expand-symbol"></span>
         </button>
       </div>
-      <div class="expand-info">
+      <div class="expand-info" id="expand-info" aria-expanded="false">
         <ul>
           <li>
             <a href="https://www.nmwa.go.jp/en/"
@@ -57,7 +57,7 @@
     </section>
 
     <section class="gallery-section">
-      <div id="loader"></div>
+
       <ul class="gallery-grid" id="gallery">
         <li id="image"></li>
       </ul>
@@ -69,6 +69,10 @@
     <footer>
       <p>© Caroline Birgersson</p>
     </footer>
+
+    <div id="loader">
+      <div></div>
+    </div>
 
     <script src="index.js"></script>
   </body>
