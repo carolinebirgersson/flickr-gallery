@@ -50,16 +50,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   if (data) {
-    // eslint-disable-next-line array-callback-return
-    data.photos.photo.map((gallery) => {
+    data.photos.photo.forEach((gallery) => {
       const { id } = gallery;
       const { server } = gallery;
       const { secret } = gallery;
 
       // 1. Gör fetch på bild-url
-
       // 2. Om gick bra, Konvertera bild till base64-sträng
-
       // 3. Om gick dåligt, rendera ingen img-tagg och consolelogga fel
 
       galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
