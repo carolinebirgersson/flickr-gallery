@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-expressions */
 // Accordion
 const accordionButton = document.getElementById("accordion-container");
 const plusContainer = document.getElementById("expand-symbol");
 plusContainer.innerHTML += "+";
+
 accordionButton.onclick = () => {
   const infoContainer = accordionButton.nextElementSibling;
   infoContainer.classList.toggle("active");
@@ -56,14 +58,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       const { secret } = gallery;
 
       // 1. Gör fetch på bild-url
-      // 2. Om gick bra, Konvertera bild till base64-sträng
+      // 2. Om gick bra, konvertera bild till base64-sträng
       // 3. Om gick dåligt, rendera ingen img-tagg och consolelogga fel
 
       galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
     });
   }
-
-  console.log(data);
 });
 
 // Scroll to top nav
@@ -72,7 +72,6 @@ const scrollButton = document.getElementById("topScrollButton");
 scrollButton.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 window.onscroll = () => {
-  // eslint-disable-next-line no-unused-expressions
   window.scrollY > 500
     ? (scrollButton.style.display = "block")
     : (scrollButton.style.display = "none");
