@@ -33,10 +33,12 @@ const errorMessage = "Sorry, no photos to show. Come back later!";
 
 async function loadGallery() {
   displayLoader();
-  const response = await fetch(API_URL);
-  const data = await response.json();
+  return (await fetch(API_URL)).json();
 
-  return data;
+  // const response = await fetch(API_URL);
+  // const data = await response.json();
+
+  // return data;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
