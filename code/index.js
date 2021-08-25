@@ -59,10 +59,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const { server } = gallery;
       const { secret } = gallery;
 
-      // 1. Gör fetch på bild-url
-      // 2. Om gick bra, konvertera bild till base64-sträng
-      // 3. Om gick dåligt, rendera ingen img-tagg och consolelogga fel
-
       galleryContainer.innerHTML += `<img src="https://live.staticflickr.com/${server}/${id}_${secret}_b.jpg" alt="image of Le Corbusier"/>`;
     });
   }
